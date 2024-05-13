@@ -9,9 +9,11 @@ import jakarta.persistence.Id;
 import lombok.Getter;
 import lombok.NonNull;
 import lombok.Setter;
+import org.hibernate.annotations.CreationTimestamp;
 import org.springframework.data.annotation.CreatedDate;
 
 import java.sql.Timestamp;
+import java.time.Instant;
 
 @Getter
 @Setter
@@ -27,9 +29,9 @@ public class Todo {
      private String taskName;
 
      @NonNull
-     private String desc;
+     private String description;
 
-     @CreatedDate
-     Timestamp dateCreated;
+     @CreationTimestamp
+     private Instant dateCreated;
 
 }
